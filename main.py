@@ -20,7 +20,6 @@ class Walk( Transportation ):
     def find_cost( self ):
         return 0
 
-
 class Taxi( Transportation ):
 
     def __init__( self, start, end, distance ):
@@ -28,6 +27,15 @@ class Taxi( Transportation ):
 
     def find_cost( self ):
         return 40 * self.distance
+
+class Train(Transportation):
+   
+   def __init__(self, start, end, distance, stations):
+      super().__init__(start, end, distance)
+      self.stations = stations
+      
+   def find_cost(self):
+      return 5 * self.stations
    
 # main program
 
